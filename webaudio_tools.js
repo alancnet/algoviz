@@ -33,7 +33,6 @@ function createAudioContext()
 	if (contextClass) {
 		return new contextClass();
 	} else {
-		alert("Sorry. WebAudio API not supported. Try using the Google Chrome or Safari browser.");
 		return null;
 	}
 }
