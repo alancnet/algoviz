@@ -1,0 +1,33 @@
+<html ng-app="algoviz">
+    <head>
+        <title>Algorithm Viz</title>
+        <link rel="stylesheet" href="algoviz.css" />
+    </head>
+    <body>
+        <section ng-controller="AlgovizController as ctrl">
+            <article ng-repeat="viz in ctrl.vizs" xx-xx-repeat="[ctrl.vizs[ctrl.vizs.length - 1]] track by $index">
+                <chart>
+                    <bar ng-repeat="item in viz track by $index"
+                        ng-attr-style="height: {{item.value + 1}}px; width: calc({{(1/viz.length)*100}}% - 2px)"
+                        ng-class="{
+                            read: item.read,
+                            write: item.write,
+                            reference: item.reference
+                        }"></bar>
+                </chart>
+                <summary>
+                    <pre>{{viz.name}}; reads: {{viz.reads}}; writes: {{viz.writes}}; compares: {{viz.compares}}; total: {{viz.reads + viz.writes + viz.compares}}, time: {{viz.elapsed.toPrecision(5)}}ms</pre>
+                </summary>
+            </article>
+            
+        </section>
+        
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="heap.js"></script>
+        <script src="webaudio_tools.js"></script>
+        <script src="synth.js"></script>
+        <script src="algoviz.js"></script>
+    </body>
+</html>

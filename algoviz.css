@@ -1,0 +1,32 @@
+chart {
+    width: 800px;
+    height: 100px;
+    margin: auto;
+    display: block;
+    background-color: black;
+    transform: rotateX(180deg);
+}
+summary {
+    width: 800px;
+    margin: auto;
+    display: block;
+}
+bar {
+    background-color: white;
+    display: block;
+    float: left;
+    margin: 0 1px 0 1px;
+    transition: background-color 100ms, height 100ms;
+}
+bar.read {
+    background-color: yellow;
+    transition: background-color 0ms, height 100ms;
+}
+bar.write {
+    background-color: red!important;
+    transition: background-color 0ms, height 100ms;
+}
+bar.reference {
+    background-color: lime;
+    transition: background-color 0ms, height 100ms;
+}
